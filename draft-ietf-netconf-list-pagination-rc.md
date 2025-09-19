@@ -380,7 +380,7 @@ informative:
    This example mimics that Appendix A.3.9 of
    {{?I-D.ietf-netconf-list-pagination}}.  This example is presented twice,
    once using XML and again using JSON.
-~~~~aasvg
+~~~aasvg
    XML:
    =============== NOTE: '\' line wrapping per RFC 8792 ================
    GET /restconf/ds/ietf-datastores:operational/example-social:members/\
@@ -400,7 +400,7 @@ informative:
    Server: example-server
    Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
    Content-Type: application/yang-data+xml-list
-~~~~
+~~~
 ~~~~
 {::include-fold ./examples/example-social.xml}
 ~~~~
