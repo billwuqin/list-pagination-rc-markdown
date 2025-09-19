@@ -30,7 +30,13 @@ informative:
 
 --- abstract
 
-TODO Abstract
+   This document defines a mapping of the list pagination mechanism
+   defined in {{?I-D.ietf-netconf-list-pagination}} to RESTCONF {{!RFC8040}}.
+
+   This document updates RFC 8040, to declare "list" and "leaf-list" as
+   valid resource targets for the RESTCONF GET operation, to define GET
+   query parameters necessary for list pagination, and to define a
+   media-type for XML-based lists.
 
 
 --- middle
