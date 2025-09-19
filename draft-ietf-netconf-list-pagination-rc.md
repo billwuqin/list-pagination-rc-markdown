@@ -151,6 +151,113 @@ informative:
    +---------------+---------+-----------------------------------------+
 ~~~~
 
+   For all of the query parameters, the query parameter is only allowed
+   for the GET and HEAD methods on "list" and "leaf-list" data
+   resources.  A "400 Bad Request" status-line MUST be returned if used
+   with any other method or resource type.  The error-tag value
+   "operation-not-supported" is used in this case.
+
+   Per the conformance defined in Section 3.1 of
+   {{?I-D.ietf-netconf-list-pagination}}, all of these parameters MUST be
+   supported for all "config true" lists and leaf-lists, and SHOULD be
+   supported for "config false" lists and leaf-lists.  A server MAY
+   disable the support for some or all "config false" lists, as
+   described in Section 3.3 of {{!I-D.ietf-netconf-list-pagination}}.
+
+###  The "limit" Query Parameter
+
+   The "limit" query parameter corresponds to the "limit" parameter
+   defined in Section 3.1.7 of [I-D.ietf-netconf-list-pagination].
+
+   If the limit value is invalid, i.e. not an unsigned 32 bit integer
+   greater than or equal to 1 or the string "unbounded", then a "400 Bad
+   Request" status-line MUST be returned with the error-type value
+   "application" and error-tag value "invalid-value".
+
+###  The "offset" Query Parameter
+
+   The "offset" query parameter corresponds to the "offset" parameter
+   defined in Section 3.1.5 of [I-D.ietf-netconf-list-pagination].
+
+   If the offset value is invalid, a "400 Bad Request" status-line MUST
+   be returned with the error-type value "application" and error-tag
+   value "invalid-value".
+
+   If the offset value exceeds the number of entries in the working
+   result set, then a "416 Range Not Satisfiable" status-line MUST be
+   returned with the error-type value "application", error-tag value
+   "invalid-value", and SHOULD also include the "offset-out-of-range"
+   identity as error-app-tag value.
+
+###  The "cursor" Query Parameter
+
+   The "cursor" query parameter corresponds to the "cursor" parameter
+   defined in Section 3.1.6 of [I-D.ietf-netconf-list-pagination].
+
+   If the cursor value is unknown, i.e. the key does not exist, a "404
+   Not Found" status-line MUST be returned with the error-type value
+   "application" and error-tag value "invalid-value", and SHOULD also
+   include the "cursor-not-found" identity as error-app-tag value.
+
+   If the "cursor" query parameter is not supported on the target node,
+   then a a "501 Not Implemented" status-line MUST be returned with
+   error-type value "application" and error-tag value "operation-not-
+   supported".
+
+###  The "direction" Query Parameter
+
+   The "direction" query parameter corresponds to the "direction"
+   parameter defined in Section 3.1.4 of
+   [I-D.ietf-netconf-list-pagination].
+
+   If the direction value is invalid, then a "400 Bad Request" status-
+   line MUST be returned with the error-type value "application" and
+   error-tag value "invalid-value".
+
+###  The "sort-by" Query Parameter
+
+   The "sort-by" query parameter corresponds to the "sort-by" parameter
+   defined in Section 3.1.2 of [I-D.ietf-netconf-list-pagination].
+
+   If the specified node identifier is invalid, then a "400 Bad Request"
+   status-line MUST be returned with the error-type value "application"
+   and error-tag value "invalid-value".
+
+###  The "locale" Query Parameter
+
+   The "locale" query parameter corresponds to the "locale" parameter
+   defined in Section 3.1.3 of [I-D.ietf-netconf-list-pagination].
+
+   If the specified node identifier is invalid, i.e. the locale is
+   unknown to the server, then a "501 Not Implemented" status-line MUST
+   be returned with the error-type value "application" and error-tag
+   value "invalid-value", and SHOULD also include the "locale-
+   unavailable" identity in as the error-app-tag value.
+
+   If "locale" is supplied but not "sort-by", a "400 Bad Request"
+   status-line MUST be return with the error-type "application" and
+   error-tag value "invalid-value".
+
+###  The "where" Query Parameter
+
+   The "where" query parameter corresponds to the "where" parameter
+   defined in Section 3.1.1 of [I-D.ietf-netconf-list-pagination].
+
+   Prefixes in the XPath expression MUST be YANG module names.
+   If the specified XPath expression is invalid, then a "400 Bad
+   Request" status-line MUST be returned with the error-type value
+   "application" and error-tag value "invalid-value".
+
+###  The "sublist-limit" Query Parameter
+
+   The "sublist-limit" query parameter corresponds to the "sublist-
+   limit" parameter defined in Section 3.2.1 of
+   [I-D.ietf-netconf-list-pagination].
+
+   If the sublist-limit value is invalid, then a "400 Bad Request"
+   status-line MUST be returned with the error-type value "application"
+   and error-tag value "invalid-value".
+   
 # Security Considerations
 
 TODO Security
