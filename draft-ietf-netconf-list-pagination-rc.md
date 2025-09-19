@@ -386,7 +386,7 @@ informative:
 ~~~~
    GET /restconf/ds/ietf-datastores:operational/example-social:members/\
    member?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=\
-   timestamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP1.1
+   timestamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP/1.1
    Host: example.com
    Accept: application/yang-data+xml-list
 ~~~~
