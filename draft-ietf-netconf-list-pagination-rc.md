@@ -380,29 +380,106 @@ informative:
    This example mimics that Appendix A.3.9 of
    {{?I-D.ietf-netconf-list-pagination}}.  This example is presented twice,
    once using XML and again using JSON.
-~~~ drawing
-   XML:
 
-   GET /restconf/ds/ietf-datastores:operational/example-social:members/\
-   member?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=\
-   timestamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP/\
+~~~~
+{::include-fold ./examples/example-social.xml}
+~~~~
+   JSON:
 
-   1.1
+   =============== NOTE: '\' line wrapping per RFC 8792 ================
+~~~~
+   GET /restconf/ds/ietf-datastores:running/example-social:members/memb\
+   er?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=time\
+   stamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP/1.1
    Host: example.com
-   Accept: application/yang-data+xml-list
-
+   Accept: application/yang-data+json
+~~~~
    Response from the RESTCONF server:
 
    HTTP/1.1 200 OK
    Date: Thu, 26 Jan 2017 20:56:30 GMT
    Server: example-server
    Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
-   Content-Type: application/yang-data+xml-list
-~~~
-~~~~
-{::include-fold ./examples/example-social.xml}
-~~~~
+   Content-Type: application/yang-data+json
 
+~~~~
+   {
+     "example-social:member": [
+       {
+         "@": {
+           "ietf-list-pagination:remaining": 1,
+           "ietf-list-pagination:locale": "en_US"
+         },
+         "member-id": "eric",
+         "email-address": "eric@example.com",
+         "password": "$0$1543",
+         "avatar": "BASE64VALUE=",
+         "tagline": "Go to bed with dreams; wake up with purpose.",
+         "following": ["alice"],
+         "posts": {
+           "post": [
+             {
+               "@": {
+                 "ietf-list-pagination:remaining": 2,
+                 "ietf-list-pagination:locale": "en_US"
+               },
+               "timestamp": "2020-09-17T18:02:04Z",
+               "title": "Son, brother, husband, father",
+               "body": "What's your story?"
+             }
+           ]
+         },
+         "favorites": {
+           "bits": ["two"],
+           "@example-social:bits": [
+             {
+               "ietf-list-pagination:remaining": 2,
+               "ietf-list-pagination:locale": "en_US"
+             }
+           ]
+         },
+         "stats": {
+           "joined": "2020-09-17T19:38:32Z",
+           "membership-level": "pro",
+           "last-activity": "2020-09-17T18:02:04Z"
+         }
+       },
+       {
+         "member-id": "bob",
+         "email-address": "bob@example.com",
+         "password": "$0$1543",
+         "avatar": "BASE64VALUE=",
+         "tagline": "Here and now, like never before.",
+         "posts": {
+           "post": [
+             {
+               "@": {
+                 "ietf-list-pagination:remaining": 2,
+                 "ietf-list-pagination:locale": "en_US"
+               },
+               "timestamp": "2020-08-14T03:32:25Z",
+               "body": "Just got in."
+             }
+           ]
+         },
+         "favorites": {
+           "decimal64-numbers": ["3.14159"],
+           "@example-social:decimal64-numbers": [
+             {
+               "ietf-list-pagination:remaining": 1,
+               "ietf-list-pagination:locale": "en_US"
+             }
+           ]
+         },
+         "stats": {
+           "joined": "2020-08-14T03:30:00Z",
+           "membership-level": "standard",
+           "last-activity": "2020-08-14T03:34:30Z"
+         }
+       }
+     ]
+   }
+~~~~
 
 
 # Acknowledgments
