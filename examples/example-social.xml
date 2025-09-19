@@ -17,7 +17,7 @@
             </post>
         </posts>
         <favorites>
-            <bits lp:remaining="2" lp:locale="en_US">two</bits>
+        <bits lp:remaining="2" lp:locale="en_US">two</bits>
         </favorites>
         <stats>
             <joined>2020-09-17T19:38:32Z</joined>
@@ -49,4 +49,5 @@
         </stats>
     </member>
 </xml-list>
+
 
