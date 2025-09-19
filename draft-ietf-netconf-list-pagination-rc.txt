@@ -85,7 +85,9 @@ Table of Contents
      3.2.  The "Media Types" Registry
        3.2.1.  Media Type "application/yang-data+xml-list"
    4.  Security Considerations
-   5.  Normative References
+   5.  References
+     5.1.  Normative References
+     5.2.  Informative References
    Acknowledgments
    Author's Address
 
@@ -403,7 +405,9 @@ Table of Contents
    data modeling considerations beyond those discussed in
    [I-D.ietf-netconf-list-pagination].
 
-5.  Normative References
+5.  References
+
+5.1.  Normative References
 
    [I-D.ietf-netconf-list-pagination]
               Watsen, K., Wu, Q., Andersson, P., Hagsand, O., and H. Li,
@@ -439,9 +443,32 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
+5.2.  Informative References
+
+   [I-D.ietf-netconf-restconf-collection]
+              Bierman, A., Björklund, M., and K. Watsen, "RESTCONF
+              Collection Resource", Work in Progress, Internet-Draft,
+              draft-ietf-netconf-restconf-collection-00, 30 January
+              2015, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              netconf-restconf-collection-00>.
+
+   [I-D.zheng-netconf-fragmentation]
+              Zheng, G. and Z. Wang, "A NETCONF Extension for Data
+              Fragmentation", Work in Progress, Internet-Draft, draft-
+              zheng-netconf-fragmentation-02, 26 June 2018,
+              <https://datatracker.ietf.org/doc/html/draft-zheng-
+              netconf-fragmentation-02>.
+
 Acknowledgments
 
-   TODO acknowledge.
+   This work has benefited from the discussions of RESTCONF resource
+   collection over the years, in particular,
+   [I-D.ietf-netconf-restconf-collection] which provides enhanced
+   filtering features for the retrieval of data nodes with the GET
+   method and [I-D.zheng-netconf-fragmentation] which document large
+   size data handling challenge.  The authors would like to thank the
+   following for lively discussions on list (ordered by first name):
+   Andy Bierman, Martin Björklund, Robert Varga, and Rob Wilton.
 
 Author's Address
 
