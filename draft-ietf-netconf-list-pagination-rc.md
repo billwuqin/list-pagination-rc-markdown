@@ -271,6 +271,7 @@ informative:
    All the registrations are to use this document (RFC XXXX) for the
    "Reference" value.
 
+~~~~
    Index          Capability Identifier
    --------------------------------------------------------------------
    :limit         urn:ietf:params:restconf:capability:limit:1.0
@@ -281,6 +282,7 @@ informative:
    :locale        urn:ietf:params:restconf:capability:locale:1.0
    :where         urn:ietf:params:restconf:capability:where:1.0
    :sublist-limit urn:ietf:params:restconf:capability:sublist-limit:1.0
+~~~~
 
 ##  The "Media Types" Registry
 
@@ -400,7 +402,7 @@ informative:
    Content-Type: application/yang-data+xml-list
 ~~~~
 ~~~~
-{::include-fold ./examples/example-social.xml}
+
 ~~~~
 
    JSON:
