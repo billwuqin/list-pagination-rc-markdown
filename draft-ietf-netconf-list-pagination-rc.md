@@ -381,29 +381,10 @@ informative:
    {{?I-D.ietf-netconf-list-pagination}}.  This example is presented twice,
    once using XML and again using JSON.
 
-   XML:
-   =============== NOTE: '\' line wrapping per RFC 8792 ================
-~~~~
-   GET /restconf/ds/ietf-datastores:operational/example-social:members/\
-   member?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=\
-   timestamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP/\
-   1.1
-   Host: example.com
-   Accept: application/yang-data+xml-list
-~~~~
-   Response from the RESTCONF server:
-~~~~
-   =============== NOTE: '\' line wrapping per RFC 8792 ================
-
-   HTTP/1.1 200 OK
-   Date: Thu, 26 Jan 2017 20:56:30 GMT
-   Server: example-server
-   Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
-   Content-Type: application/yang-data+xml-list
-~~~~
 ~~~~
 {::include-fold ./examples/example-social.xml}
 ~~~~
+
 
 
 # Acknowledgments
