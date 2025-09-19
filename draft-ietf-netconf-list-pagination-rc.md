@@ -400,7 +400,7 @@ informative:
    Content-Type: application/yang-data+xml-list
 ~~~~
 ~~~~
-
+{::include-fold ./examples/example-social.xml}
 ~~~~
 
    JSON:
