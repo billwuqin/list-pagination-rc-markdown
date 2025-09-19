@@ -18,9 +18,9 @@ keyword:
 
 author:
  -
-    fullname: Your Name Here
+    fullname: "Qin Wu"
     organization: Your Organization Here
-    email: your.email@example.com
+    email: "bill.wu@huawei.com"
 
 normative:
 
