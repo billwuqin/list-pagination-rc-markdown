@@ -1734,124 +1734,67 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="appendix-C.1-1">This example mimics that Appendix A.3.9 of
    <span>[<a href="#I-D.ietf-netconf-list-pagination" class="cite xref">I-D.ietf-netconf-list-pagination</a>]</span>.  This example is presented twice,
    once using XML and again using JSON.<a href="#appendix-C.1-1" class="pilcrow">¶</a></p>
-<p id="appendix-C.1-2">XML:
-   =============== NOTE: '' line wrapping per RFC 8792 ================
-~~~~
-   GET /restconf/ds/ietf-datastores:operational/example-social:members/\
-   member?where=//stats//joined[starts-with(timestamp,'2020')]&amp;sort-by=\
-   timestamp&amp;direction=backwards&amp;offset=2&amp;limit=2&amp;sublist-limit=1 HTTP/\
-   1.1
-   Host: example.com
-   Accept: application/yang-data+xml-list
-~~~~
-   Response from the RESTCONF server:
-~~~~
-   =============== NOTE: '' line wrapping per RFC 8792 ================<a href="#appendix-C.1-2" class="pilcrow">¶</a></p>
-<p id="appendix-C.1-3">HTTP/1.1 200 OK
-   Date: Thu, 26 Jan 2017 20:56:30 GMT
-   Server: example-server
-   Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
-   Content-Type: application/yang-data+xml-list
-~~~~
-~~~~<a href="#appendix-C.1-3" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-C.1-4">
+<div class="alignLeft art-text artwork" id="appendix-C.1-2">
 <pre>
-   JSON:
+=============== NOTE: '\' line wrapping per RFC 8792 ================
 
-   =============== NOTE: '\' line wrapping per RFC 8792 ================
-</pre><a href="#appendix-C.1-4" class="pilcrow">¶</a>
-</div>
-<p id="appendix-C.1-5">GET /restconf/ds/ietf-datastores:running/example-social:members/memb\
-   er?where=//stats//joined[starts-with(timestamp,'2020')]&amp;sort-by=time\
-   stamp&amp;direction=backwards&amp;offset=2&amp;limit=2&amp;sublist-limit=1 HTTP/1.1
-   Host: example.com
-   Accept: application/yang-data+json
-~~~~
-   Response from the RESTCONF server:<a href="#appendix-C.1-5" class="pilcrow">¶</a></p>
-<p id="appendix-C.1-6">HTTP/1.1 200 OK
-   Date: Thu, 26 Jan 2017 20:56:30 GMT
-   Server: example-server
-   Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
-   Content-Type: application/yang-data+json<a href="#appendix-C.1-6" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="appendix-C.1-7">
-<pre>
-   {
-     "example-social:member": [
-       {
-         "@": {
-           "ietf-list-pagination:remaining": 1,
-           "ietf-list-pagination:locale": "en_US"
-         },
-         "member-id": "eric",
-         "email-address": "eric@example.com",
-         "password": "$0$1543",
-         "avatar": "BASE64VALUE=",
-         "tagline": "Go to bed with dreams; wake up with purpose.",
-         "following": ["alice"],
-         "posts": {
-           "post": [
-             {
-               "@": {
-                 "ietf-list-pagination:remaining": 2,
-                 "ietf-list-pagination:locale": "en_US"
-               },
-               "timestamp": "2020-09-17T18:02:04Z",
-               "title": "Son, brother, husband, father",
-               "body": "What's your story?"
-             }
-           ]
-         },
-         "favorites": {
-           "bits": ["two"],
-           "@example-social:bits": [
-             {
-               "ietf-list-pagination:remaining": 2,
-               "ietf-list-pagination:locale": "en_US"
-             }
-           ]
-         },
-         "stats": {
-           "joined": "2020-09-17T19:38:32Z",
-           "membership-level": "pro",
-           "last-activity": "2020-09-17T18:02:04Z"
-         }
-       },
-       {
-         "member-id": "bob",
-         "email-address": "bob@example.com",
-         "password": "$0$1543",
-         "avatar": "BASE64VALUE=",
-         "tagline": "Here and now, like never before.",
-         "posts": {
-           "post": [
-             {
-               "@": {
-                 "ietf-list-pagination:remaining": 2,
-                 "ietf-list-pagination:locale": "en_US"
-               },
-               "timestamp": "2020-08-14T03:32:25Z",
-               "body": "Just got in."
-             }
-           ]
-         },
-         "favorites": {
-           "decimal64-numbers": ["3.14159"],
-           "@example-social:decimal64-numbers": [
-             {
-               "ietf-list-pagination:remaining": 1,
-               "ietf-list-pagination:locale": "en_US"
-             }
-           ]
-         },
-         "stats": {
-           "joined": "2020-08-14T03:30:00Z",
-           "membership-level": "standard",
-           "last-activity": "2020-08-14T03:34:30Z"
-         }
-       }
-     ]
-   }
-</pre><a href="#appendix-C.1-7" class="pilcrow">¶</a>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;xml-list&gt;
+    &lt;member
+        xmlns="https://example.com/ns/example-social"
+        xmlns:lp="urn:ietf:params:xml:ns:yang:ietf-list-pagination"&gt;
+        &lt;member-id&gt;eric&lt;/member-id&gt;
+        &lt;email-address&gt;eric@example.com&lt;/email-address&gt;
+        &lt;password&gt;$0$1543&lt;/password&gt;
+        &lt;avatar&gt;BASE64VALUE=&lt;/avatar&gt;
+        &lt;tagline&gt;Go to bed with dreams; wake up with purpose.&lt;/\
+                                                             tagline&gt;
+        &lt;following&gt;alice&lt;/following&gt;
+        &lt;posts&gt;
+            &lt;post&gt;
+                &lt;timestamp&gt;2020-09-17T18:02:04Z&lt;/timestamp&gt;
+                &lt;title&gt;Son, brother, husband, father&lt;/title&gt;
+                &lt;body&gt;What's your story?&lt;/body&gt;
+            &lt;/post&gt;
+        &lt;/posts&gt;
+        &lt;favorites&gt;
+           &lt;bits&gt;two&lt;/bits&gt;
+        &lt;/favorites&gt;
+        &lt;stats&gt;
+            &lt;joined&gt;2020-09-17T19:38:32Z&lt;/joined&gt;
+            &lt;membership-level&gt;pro&lt;/membership-level&gt;
+            &lt;last-activity&gt;2020-09-17T18:02:04Z&lt;/last-activity&gt;
+        &lt;/stats&gt;
+    &lt;/member&gt;
+    &lt;member
+        xmlns="https://example.com/ns/example-social"
+        xmlns:lp="urn:ietf:params:xml:ns:yang:ietf-list-pagination"&gt;
+        &lt;member-id&gt;bob&lt;/member-id&gt;
+        &lt;email-address&gt;bob@example.com&lt;/email-address&gt;
+        &lt;password&gt;$0$1543&lt;/password&gt;
+        &lt;avatar&gt;BASE64VALUE=&lt;/avatar&gt;
+        &lt;tagline&gt;Here and now, like never before.&lt;/tagline&gt;
+        &lt;posts&gt;
+            &lt;post&gt;
+                &lt;timestamp&gt;2020-08-14T03:32:25Z&lt;/timestamp&gt;
+                &lt;body&gt;Just got in.&lt;/body&gt;
+            &lt;/post&gt;
+        &lt;/posts&gt;
+        &lt;favorites&gt;
+            &lt;decimal64-numbers&gt;3.14159&lt;/decimal64-numbers&gt;
+        &lt;/favorites&gt;
+        &lt;stats&gt;
+            &lt;joined&gt;2020-08-14T03:30:00Z&lt;/joined&gt;
+            &lt;membership-level&gt;standard&lt;/membership-level&gt;
+            &lt;last-activity&gt;2020-08-14T03:34:30Z&lt;/last-activity&gt;
+        &lt;/stats&gt;
+    &lt;/member&gt;
+&lt;/xml-list&gt;
+
+
+
+
+</pre><a href="#appendix-C.1-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
