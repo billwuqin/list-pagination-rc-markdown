@@ -257,7 +257,7 @@ informative:
    If the sublist-limit value is invalid, then a "400 Bad Request"
    status-line MUST be returned with the error-type value "application"
    and error-tag value "invalid-value".
-   
+ 
 # Security Considerations
 
 TODO Security
