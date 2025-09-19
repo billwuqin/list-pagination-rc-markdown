@@ -72,8 +72,19 @@ Table of Contents
      2.1.  Resource Targets
      2.2.  Media Type
      2.3.  Query Parameters
-   3.  Security Considerations
-   4.  IANA Considerations
+       2.3.1.  The "limit" Query Parameter
+       2.3.2.  The "offset" Query Parameter
+       2.3.3.  The "cursor" Query Parameter
+       2.3.4.  The "direction" Query Parameter
+       2.3.5.  The "sort-by" Query Parameter
+       2.3.6.  The "locale" Query Parameter
+       2.3.7.  The "where" Query Parameter
+       2.3.8.  The "sublist-limit" Query Parameter
+   3.  IANA Considerations
+     3.1.  The "RESTCONF Capability URNs" Registry
+     3.2.  The "Media Types" Registry
+       3.2.1.  Media Type "application/yang-data+xml-list"
+   4.  Security Considerations
    5.  Normative References
    Acknowledgments
    Author's Address
@@ -185,13 +196,212 @@ Table of Contents
    |               |         | is unbounded.                           |
    +---------------+---------+-----------------------------------------+
 
-3.  Security Considerations
+   For all of the query parameters, the query parameter is only allowed
+   for the GET and HEAD methods on "list" and "leaf-list" data
+   resources.  A "400 Bad Request" status-line MUST be returned if used
+   with any other method or resource type.  The error-tag value
+   "operation-not-supported" is used in this case.
 
-   TODO Security
+   Per the conformance defined in Section 3.1 of
+   [I-D.ietf-netconf-list-pagination], all of these parameters MUST be
+   supported for all "config true" lists and leaf-lists, and SHOULD be
+   supported for "config false" lists and leaf-lists.  A server MAY
+   disable the support for some or all "config false" lists, as
+   described in Section 3.3 of [I-D.ietf-netconf-list-pagination].
 
-4.  IANA Considerations
+2.3.1.  The "limit" Query Parameter
 
-   This document has no IANA actions.
+   The "limit" query parameter corresponds to the "limit" parameter
+   defined in Section 3.1.7 of [I-D.ietf-netconf-list-pagination].
+
+   If the limit value is invalid, i.e. not an unsigned 32 bit integer
+   greater than or equal to 1 or the string "unbounded", then a "400 Bad
+   Request" status-line MUST be returned with the error-type value
+   "application" and error-tag value "invalid-value".
+
+2.3.2.  The "offset" Query Parameter
+
+   The "offset" query parameter corresponds to the "offset" parameter
+   defined in Section 3.1.5 of [I-D.ietf-netconf-list-pagination].
+
+   If the offset value is invalid, a "400 Bad Request" status-line MUST
+   be returned with the error-type value "application" and error-tag
+   value "invalid-value".
+
+   If the offset value exceeds the number of entries in the working
+   result set, then a "416 Range Not Satisfiable" status-line MUST be
+   returned with the error-type value "application", error-tag value
+   "invalid-value", and SHOULD also include the "offset-out-of-range"
+   identity as error-app-tag value.
+
+2.3.3.  The "cursor" Query Parameter
+
+   The "cursor" query parameter corresponds to the "cursor" parameter
+   defined in Section 3.1.6 of [I-D.ietf-netconf-list-pagination].
+
+   If the cursor value is unknown, i.e. the key does not exist, a "404
+   Not Found" status-line MUST be returned with the error-type value
+   "application" and error-tag value "invalid-value", and SHOULD also
+   include the "cursor-not-found" identity as error-app-tag value.
+
+   If the "cursor" query parameter is not supported on the target node,
+   then a a "501 Not Implemented" status-line MUST be returned with
+   error-type value "application" and error-tag value "operation-not-
+   supported".
+
+2.3.4.  The "direction" Query Parameter
+
+   The "direction" query parameter corresponds to the "direction"
+   parameter defined in Section 3.1.4 of
+   [I-D.ietf-netconf-list-pagination].
+
+   If the direction value is invalid, then a "400 Bad Request" status-
+   line MUST be returned with the error-type value "application" and
+   error-tag value "invalid-value".
+
+2.3.5.  The "sort-by" Query Parameter
+
+   The "sort-by" query parameter corresponds to the "sort-by" parameter
+   defined in Section 3.1.2 of [I-D.ietf-netconf-list-pagination].
+
+   If the specified node identifier is invalid, then a "400 Bad Request"
+   status-line MUST be returned with the error-type value "application"
+   and error-tag value "invalid-value".
+
+2.3.6.  The "locale" Query Parameter
+
+   The "locale" query parameter corresponds to the "locale" parameter
+   defined in Section 3.1.3 of [I-D.ietf-netconf-list-pagination].
+
+   If the specified node identifier is invalid, i.e. the locale is
+   unknown to the server, then a "501 Not Implemented" status-line MUST
+   be returned with the error-type value "application" and error-tag
+   value "invalid-value", and SHOULD also include the "locale-
+   unavailable" identity in as the error-app-tag value.
+
+   If "locale" is supplied but not "sort-by", a "400 Bad Request"
+   status-line MUST be return with the error-type "application" and
+   error-tag value "invalid-value".
+
+2.3.7.  The "where" Query Parameter
+
+   The "where" query parameter corresponds to the "where" parameter
+   defined in Section 3.1.1 of [I-D.ietf-netconf-list-pagination].
+
+   Prefixes in the XPath expression MUST be YANG module names.  If the
+   specified XPath expression is invalid, then a "400 Bad Request"
+   status-line MUST be returned with the error-type value "application"
+   and error-tag value "invalid-value".
+
+2.3.8.  The "sublist-limit" Query Parameter
+
+   The "sublist-limit" query parameter corresponds to the "sublist-
+   limit" parameter defined in Section 3.2.1 of
+   [I-D.ietf-netconf-list-pagination].
+
+   If the sublist-limit value is invalid, then a "400 Bad Request"
+   status-line MUST be returned with the error-type value "application"
+   and error-tag value "invalid-value".
+
+3.  IANA Considerations
+
+3.1.  The "RESTCONF Capability URNs" Registry
+
+   This document registers six capabilities in the RESTCONF Capability
+   URNs [RFC8040] maintained at https://www.iana.org/assignments/
+   restconf-capability-urns/restconf-capability-urns.xhtml.  Following
+   the instructions defined in Section 11.4 of [RFC8040], the below
+   registrations are requested:
+
+   All the registrations are to use this document (RFC XXXX) for the
+   "Reference" value.
+
+   Index Capability Identifier
+   --------------------------------------------------------------------
+   :limit urn:ietf:params:restconf:capability:limit:1.0 :offset
+   urn:ietf:params:restconf:capability:offset:1.0 :cursor
+   urn:ietf:params:restconf:capability:cursor:1.0 :direction
+   urn:ietf:params:restconf:capability:direction:1.0 :sort-by
+   urn:ietf:params:restconf:capability:sort-by:1.0 :locale
+   urn:ietf:params:restconf:capability:locale:1.0 :where
+   urn:ietf:params:restconf:capability:where:1.0 :sublist-limit
+   urn:ietf:params:restconf:capability:sublist-limit:1.0
+
+3.2.  The "Media Types" Registry
+
+   This document registers one media type in the "application"
+   subregistry of the Media Types registry [RFC6838] [RFC4855]
+   maintained at https://www.iana.org/assignments/media-types/media-
+   types.xhtml#application.  Following the format defined in [RFC4855],
+   the below registration is requested:
+
+3.2.1.  Media Type "application/yang-data+xml-list"
+
+   Type name: application
+
+     Subtype name: yang-data+xml-list
+
+     Required parameters: None
+
+     Optional parameters: None
+
+     Encoding considerations: 8-bit
+        Each conceptual YANG data node is encoded according to the
+        XML Encoding Rules and Canonical Format for the specific
+        YANG data node type defined in {{RFC7950}}.
+
+     Security considerations: Security considerations related
+        to the generation and consumption of RESTCONF messages
+        are discussed in Section 12 of RFC 8040.  Additional
+        security considerations are specific to the semantics
+        of particular YANG data models.  Each YANG module is
+        expected to specify security considerations for the
+        YANG data defined in that module.
+
+     Interoperability considerations: RFC XXXX specifies the
+        format of conforming messages and the interpretation
+        thereof.
+
+     Published specification: RFC XXXX
+
+     Applications that use this media type: Instance document data
+        parsers used within a protocol or automation tool that
+        utilize the YANG Patch data structure.
+
+     Fragment identifier considerations: Fragment identifiers for
+        this type are not defined.  All YANG data nodes are
+        accessible as resources using the path in the request URI.
+
+     Additional information:
+
+        Deprecated alias names for this type: N/A
+        Magic number(s): N/A
+        File extension(s): None
+        Macintosh file type code(s): "TEXT"
+
+     Person & email address to contact for further information:
+        See the Authors' Addresses section of RFC XXXX.
+
+     Intended usage: COMMON
+
+     Restrictions on usage: N/A
+
+     Author: See the Authors' Addresses section of RFC XXXX.
+
+     Change controller: Internet Engineering Task Force
+        (mailto:iesg@ietf.org).
+
+     Provisional registration? (standards tree only): no
+
+4.  Security Considerations
+
+   This document introduces protocol operations for paging through data
+   already provided by the RESTCONF protocol, and hence does not
+   introduce any new security considerations.
+
+   This document does not define a YANG module and hence there are no
+   data modeling considerations beyond those discussed in
+   [I-D.ietf-netconf-list-pagination].
 
 5.  Normative References
 
@@ -207,6 +417,15 @@ Table of Contents
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC4855]  Casner, S., "Media Type Registration of RTP Payload
+              Formats", RFC 4855, DOI 10.17487/RFC4855, February 2007,
+              <https://www.rfc-editor.org/rfc/rfc4855>.
+
+   [RFC6838]  Freed, N., Klensin, J., and T. Hansen, "Media Type
+              Specifications and Registration Procedures", BCP 13,
+              RFC 6838, DOI 10.17487/RFC6838, January 2013,
+              <https://www.rfc-editor.org/rfc/rfc6838>.
 
    [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
               RFC 7950, DOI 10.17487/RFC7950, August 2016,
