@@ -1,4 +1,5 @@
-   <xml-list>
+<?xml version="1.0" encoding="utf-8"?>
+<xml-list>
      <member
        xmlns="https://example.com/ns/example-social"
        xmlns:lp="urn:ietf:params:xml:ns:yang:ietf-list-pagination"
@@ -51,4 +52,5 @@
        </stats>
      </member>
    </xml-list>
+
 
