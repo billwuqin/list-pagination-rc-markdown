@@ -364,4 +364,12 @@ informative:
 # Acknowledgments
 {:numbered="false"}
 
-TODO acknowledge.
+   This work has benefited from the discussions of RESTCONF resource
+   collection over the years, in particular,
+   {{?I-D.ietf-netconf-restconf-collection}} which provides enhanced
+   filtering features for the retrieval of data nodes with the GET
+   method and {{?I-D.zheng-netconf-fragmentation}} which document large
+   size data handling challenge.  The authors would like to thank the
+   following for lively discussions on list (ordered by first name):
+   Andy Bierman, Martin Björklund, Robert Varga, and Rob Wilton.
+
