@@ -380,15 +380,7 @@ informative:
    This example mimics that Appendix A.3.9 of
    {{?I-D.ietf-netconf-list-pagination}}.  This example is presented twice,
    once using XML and again using JSON.
-~~~~
 
-
-   HTTP/1.1 200 OK
-   Date: Thu, 26 Jan 2017 20:56:30 GMT
-   Server: example-server
-   Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
-   Content-Type: application/yang-data+xml-list
-~~~~
 ~~~~
 {::include-fold ./examples/example-social.xml}
 ~~~~
