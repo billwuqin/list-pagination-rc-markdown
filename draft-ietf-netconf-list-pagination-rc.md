@@ -380,9 +380,9 @@ informative:
    This example mimics that Appendix A.3.9 of
    {{?I-D.ietf-netconf-list-pagination}}.  This example is presented twice,
    once using XML and again using JSON.
-~~~aasvg
+~~~ drawing
    XML:
-   =============== NOTE: '\' line wrapping per RFC 8792 ================
+
    GET /restconf/ds/ietf-datastores:operational/example-social:members/\
    member?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=\
    timestamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP/\
@@ -392,8 +392,6 @@ informative:
    Accept: application/yang-data+xml-list
 
    Response from the RESTCONF server:
-
-   =============== NOTE: '\' line wrapping per RFC 8792 ================
 
    HTTP/1.1 200 OK
    Date: Thu, 26 Jan 2017 20:56:30 GMT
