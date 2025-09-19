@@ -1739,7 +1739,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 ~~~~
    GET /restconf/ds/ietf-datastores:operational/example-social:members/\
    member?where=//stats//joined[starts-with(timestamp,'2020')]&amp;sort-by=\
-   timestamp&amp;direction=backwards&amp;offset=2&amp;limit=2&amp;sublist-limit=1 HTTP1.1
+   timestamp&amp;direction=backwards&amp;offset=2&amp;limit=2&amp;sublist-limit=1 HTTP/1.1
    Host: example.com
    Accept: application/yang-data+xml-list
 ~~~~
