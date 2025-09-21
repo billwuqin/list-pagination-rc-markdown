@@ -18,9 +18,25 @@ keyword:
 
 author:
  -
-    fullname: "Qin Wu"
-    organization: Your Organization Here
-    email: "bill.wu@huawei.com"
+    fullname:  Kent Watsen
+    organization: Watsen Networks
+    email: kent+ietf@watsen.net
+ -
+    fullname:  Qin Wu
+    organization: Huawei
+    email: bill.wu@huawei.com
+ -
+    fullname:  Per Andersson
+    organization: Cisco
+    email: per.ietf@ionio.se
+ -
+    fullname:  Olof Hagsand
+    organization: SUNET
+    email: olof@hagsand.se
+ -
+    fullname:  Hongwei Li
+    organization: HP
+    email: flycoolman@gmail.com
 
 normative:
 
