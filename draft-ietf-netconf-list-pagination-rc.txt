@@ -2,10 +2,17 @@
 
 
 
-Network Configuration                                              Q. Wu
-Internet-Draft                                    Your Organization Here
-Intended status: Standards Track                       19 September 2025
-Expires: 23 March 2026
+Network Configuration                                          K. Watsen
+Internet-Draft                                           Watsen Networks
+Intended status: Standards Track                                   Q. Wu
+Expires: 25 March 2026                                            Huawei
+                                                            P. Andersson
+                                                                   Cisco
+                                                              O. Hagsand
+                                                                   SUNET
+                                                                   H. Li
+                                                                      HP
+                                                       21 September 2025
 
 
              RESTCONF Extensions to Support List Pagination
@@ -47,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 March 2026.
+   This Internet-Draft will expire on 25 March 2026.
 
 Copyright Notice
 
@@ -93,7 +100,7 @@ Table of Contents
    Appendix C.  Appendix C.  Example Queries
      C.1.  List pagination with all query parameters
    Acknowledgments
-   Author's Address
+   Authors' Addresses
 
 1.  Introduction
 
@@ -650,8 +657,28 @@ Acknowledgments
    following for lively discussions on list (ordered by first name):
    Andy Bierman, Martin Björklund, Robert Varga, and Rob Wilton.
 
-Author's Address
+Authors' Addresses
+
+   Kent Watsen
+   Watsen Networks
+   Email: kent+ietf@watsen.net
+
 
    Qin Wu
-   Your Organization Here
+   Huawei
    Email: bill.wu@huawei.com
+
+
+   Per Andersson
+   Cisco
+   Email: per.ietf@ionio.se
+
+
+   Olof Hagsand
+   SUNET
+   Email: olof@hagsand.se
+
+
+   Hongwei Li
+   HP
+   Email: flycoolman@gmail.com

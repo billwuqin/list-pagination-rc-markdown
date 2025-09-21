@@ -5,7 +5,11 @@
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
 <title>RESTCONF Extensions to Support List Pagination</title>
+<meta content="Kent Watsen" name="author">
 <meta content="Qin Wu" name="author">
+<meta content="Per Andersson" name="author">
+<meta content="Olof Hagsand" name="author">
+<meta content="Hongwei Li" name="author">
 <meta content='
        This document defines a mapping of the list pagination mechanism
    defined in   to RESTCONF  . 
@@ -1054,8 +1058,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <td class="right">September 2025</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Wu</td>
-<td class="center">Expires 23 March 2026</td>
+<td class="left">Watsen, et al.</td>
+<td class="center">Expires 25 March 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1068,17 +1072,33 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-netconf-list-pagination-rc-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-09-19" class="published">19 September 2025</time>
+<time datetime="2025-09-21" class="published">21 September 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2026-03-23">23 March 2026</time></dd>
-<dt class="label-authors">Author:</dt>
+<dd class="expires"><time datetime="2026-03-25">25 March 2026</time></dd>
+<dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
+      <div class="author-name">K. Watsen</div>
+<div class="org">Watsen Networks</div>
+</div>
+<div class="author">
       <div class="author-name">Q. Wu</div>
-<div class="org">Your Organization Here</div>
+<div class="org">Huawei</div>
+</div>
+<div class="author">
+      <div class="author-name">P. Andersson</div>
+<div class="org">Cisco</div>
+</div>
+<div class="author">
+      <div class="author-name">O. Hagsand</div>
+<div class="org">SUNET</div>
+</div>
+<div class="author">
+      <div class="author-name">H. Li</div>
+<div class="org">HP</div>
 </div>
 </dd>
 </dl>
@@ -1123,7 +1143,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 23 March 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 25 March 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1251,7 +1271,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.9.1"><a href="#appendix-D" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#appendix-E" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#appendix-E" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1930,15 +1950,47 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </div>
 <div id="authors-addresses">
 <section id="appendix-E">
-      <h2 id="name-authors-address">
-<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Kent Watsen</span></div>
+<div dir="auto" class="left"><span class="org">Watsen Networks</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:kent+ietf@watsen.net" class="email">kent+ietf@watsen.net</a>
+</div>
+</address>
+<address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Qin Wu</span></div>
-<div dir="auto" class="left"><span class="org">Your Organization Here</span></div>
+<div dir="auto" class="left"><span class="org">Huawei</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:bill.wu@huawei.com" class="email">bill.wu@huawei.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Per Andersson</span></div>
+<div dir="auto" class="left"><span class="org">Cisco</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:per.ietf@ionio.se" class="email">per.ietf@ionio.se</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Olof Hagsand</span></div>
+<div dir="auto" class="left"><span class="org">SUNET</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:olof@hagsand.se" class="email">olof@hagsand.se</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Hongwei Li</span></div>
+<div dir="auto" class="left"><span class="org">HP</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:flycoolman@gmail.com" class="email">flycoolman@gmail.com</a>
 </div>
 </address>
 </section>
