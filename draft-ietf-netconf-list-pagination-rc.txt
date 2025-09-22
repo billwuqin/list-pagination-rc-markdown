@@ -5,14 +5,14 @@
 Network Configuration                                          K. Watsen
 Internet-Draft                                           Watsen Networks
 Intended status: Standards Track                                   Q. Wu
-Expires: 25 March 2026                                            Huawei
+Expires: 26 March 2026                                            Huawei
                                                             P. Andersson
                                                                    Cisco
                                                               O. Hagsand
                                                                    SUNET
                                                                    H. Li
                                                                       HP
-                                                       21 September 2025
+                                                       22 September 2025
 
 
              RESTCONF Extensions to Support List Pagination
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 March 2026.
+   This Internet-Draft will expire on 26 March 2026.
 
 Copyright Notice
 
@@ -495,17 +495,23 @@ C.1.  List pagination with all query parameters
    once using XML and again using JSON.
 
    XML: =============== NOTE: '' line wrapping per RFC 8792
-   ================ ~~~~ GET /restconf/ds/ietf-datastores:operational/
-   example-social:members/\ member?where=//stats//joined[starts-
-   with(timestamp,'2020')]&sort-by=\
-   timestamp&direction=backwards&offset=2&limit=2&sublist-limit=1
-   HTTP/1.1 Host: example.com Accept: application/yang-data+xml-list
-   ~~~~ Response from the RESTCONF server: ~~~~ =============== NOTE: ''
-   line wrapping per RFC 8792 ================
+   ================
 
-   HTTP/1.1 200 OK Date: Thu, 26 Jan 2017 20:56:30 GMT Server: example-
-   server Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT Content-Type:
-   application/yang-data+xml-list ~~~~
+   GET /restconf/ds/ietf-datastores:operational/example-social:members/\
+   member?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=\
+   timestamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP/1.1
+   Host: example.com
+   Accept: application/yang-data+xml-list
+
+   Response from the RESTCONF server:
+
+   =============== NOTE: '\' line wrapping per RFC 8792 ================
+
+   HTTP/1.1 200 OK
+   Date: Thu, 26 Jan 2017 20:56:30 GMT
+   Server: example-server
+   Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
+   Content-Type: application/yang-data+xml-list
 
    =============== NOTE: '\' line wrapping per RFC 8792 ================
 
@@ -564,16 +570,20 @@ C.1.  List pagination with all query parameters
 
    JSON:
 
-   =============== NOTE: '' line wrapping per RFC 8792 ================
-   ~~~~ GET /restconf/ds/ietf-datastores:running/example-social:members/
-   memb\ er?where=//stats//joined[starts-with(timestamp,'2020')]&sort-
-   by=time\ stamp&direction=backwards&offset=2&limit=2&sublist-limit=1
-   HTTP/1.1 Host: example.com Accept: application/yang-data+json ~~~~
+   =============== NOTE: '\' line wrapping per RFC 8792 ================
+   GET /restconf/ds/ietf-datastores:running/example-social:members/memb\
+   er?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=time\
+   stamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP/1.1
+   Host: example.com
+   Accept: application/yang-data+json
+
    Response from the RESTCONF server:
 
-   HTTP/1.1 200 OK Date: Thu, 26 Jan 2017 20:56:30 GMT Server: example-
-   server Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT Content-Type:
-   application/yang-data+json
+      HTTP/1.1 200 OK
+      Date: Thu, 26 Jan 2017 20:56:30 GMT
+      Server: example-server
+      Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
+      Content-Type: application/yang-data+json
 
       {
         "example-social:member": [
