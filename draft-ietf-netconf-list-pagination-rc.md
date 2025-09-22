@@ -101,7 +101,7 @@ informative:
    The "application/yang-data+xml-list" media-type defines a pseudo top-
    level element called "xml-list" that is used to wrap the response
    set, thus ensuring that a single top-level element is returned for
-   the XML encoding", as required by Section 4.3 of {{!RFC8040}}.
+   the XML encoding, as required by Section 4.3 of {{!RFC8040}}.
 
    For JSON, the existing "application/yang-data+json" media type is
    sufficient, as the JSON format has built-in support for encoding
@@ -114,9 +114,9 @@ informative:
 
    This document extends Section 4.8 of {{!RFC8040}} to add new query
    parameters "limit", "offset", "cursor", "direction", "sort-by",
-   "locale", "where", and "sublist-list".
+   "locale", "where", and "sublist-limit".
 
-   These six query parameters correspond to those defined in Sections
+   These eight query parameters correspond to those defined in Sections
    3.1 and 3.2 in {{!I-D.ietf-netconf-list-pagination}}.
 
 ~~~~
@@ -128,7 +128,7 @@ informative:
    |               |         | that may be returned is unbounded.      |
    |               |         |                                         |
    | offset        | GET,    | Indicates the number of entries in the  |
-   |               | HEAD    | result set that should the skipped over |
+   |               | HEAD    | result set that should be skipped over  |
    |               |         | when preparing the response.  If not    |
    |               |         | specified, then no entries in the       |
    |               |         | result set are skipped.                 |
@@ -186,7 +186,7 @@ informative:
    The "limit" query parameter corresponds to the "limit" parameter
    defined in Section 3.1.7 of {{?I-D.ietf-netconf-list-pagination}}.
 
-   If the limit value is invalid, i.e. not an unsigned 32 bit integer
+   If the limit value is invalid, i.e. not an unsigned 32-bit integer
    greater than or equal to 1 or the string "unbounded", then a "400 Bad
    Request" status-line MUST be returned with the error-type value
    "application" and error-tag value "invalid-value".
@@ -204,7 +204,7 @@ informative:
    result set, then a "416 Range Not Satisfiable" status-line MUST be
    returned with the error-type value "application", error-tag value
    "invalid-value", and SHOULD also include the "offset-out-of-range"
-   identity as error-app-tag value.
+   identity as the error-app-tag value.
 
 ###  The "cursor" Query Parameter
 
@@ -217,7 +217,7 @@ informative:
    include the "cursor-not-found" identity as error-app-tag value.
 
    If the "cursor" query parameter is not supported on the target node,
-   then a a "501 Not Implemented" status-line MUST be returned with
+   then a "501 Not Implemented" status-line MUST be returned with
    error-type value "application" and error-tag value "operation-not-
    supported".
 
@@ -249,10 +249,10 @@ informative:
    unknown to the server, then a "501 Not Implemented" status-line MUST
    be returned with the error-type value "application" and error-tag
    value "invalid-value", and SHOULD also include the "locale-
-   unavailable" identity in as the error-app-tag value.
+   unavailable" identity as the error-app-tag value.
 
    If "locale" is supplied but not "sort-by", a "400 Bad Request"
-   status-line MUST be return with the error-type "application" and
+   status-line MUST be returned with the error-type "application" and
    error-tag value "invalid-value".
 
 ###  The "where" Query Parameter
@@ -285,7 +285,7 @@ informative:
    the instructions defined in Section 11.4 of {{!RFC8040}}, the below
    registrations are requested:
 
-   All the registrations are to use this document (RFC XXXX) for the
+   All registrations are to use this document (RFC XXXX) for the
    "Reference" value.
 
 ~~~~
