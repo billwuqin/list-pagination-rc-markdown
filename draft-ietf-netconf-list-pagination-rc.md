@@ -412,7 +412,6 @@ informative:
    Response from the RESTCONF server:
 
 ~~~~
-   =============== NOTE: '\' line wrapping per RFC 8792 ================
 
    HTTP/1.1 200 OK
    Date: Thu, 26 Jan 2017 20:56:30 GMT
