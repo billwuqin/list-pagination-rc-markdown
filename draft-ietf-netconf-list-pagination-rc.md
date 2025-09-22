@@ -80,7 +80,7 @@ informative:
 
    Various examples in this document use "BASE64VALUE=" as a placeholder
    value for binary data that has been base64 encoded (per Section 9.8
-   of {{!RFC7950}}).  This placeholder value is used because real base64
+   of {{?RFC7950}}).  This placeholder value is used because real base64
    encoded structures are often many lines long and hence distracting to
    the example being presented.
 
@@ -304,9 +304,9 @@ informative:
 ##  The "Media Types" Registry
 
    This document registers one media type in the "application"
-   subregistry of the Media Types registry {{!RFC6838}} {{!RFC4855}}
+   subregistry of the Media Types registry {{?RFC6838}} {{?RFC4855}}
    maintained at https://www.iana.org/assignments/media-types/media-
-   types.xhtml#application.  Following the format defined in {{!RFC4855}},
+   types.xhtml#application.  Following the format defined in {{?RFC4855}},
    the below registration is requested:
 
 ###  Media Type "application/yang-data+xml-list"
@@ -322,7 +322,7 @@ informative:
       Encoding considerations: 8-bit
          Each conceptual YANG data node is encoded according to the
          XML Encoding Rules and Canonical Format for the specific
-         YANG data node type defined in {{!RFC7950}}.
+         YANG data node type defined in {{?RFC7950}}.
 
       Security considerations: Security considerations related
          to the generation and consumption of RESTCONF messages
