@@ -400,6 +400,7 @@ informative:
 
    XML:
    =============== NOTE: '\' line wrapping per RFC 8792 ================
+   
 ~~~~
    GET /restconf/ds/ietf-datastores:operational/example-social:members/\
    member?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=\
@@ -407,7 +408,9 @@ informative:
    Host: example.com
    Accept: application/yang-data+xml-list
 ~~~~
+
    Response from the RESTCONF server:
+   
 ~~~~
    =============== NOTE: '\' line wrapping per RFC 8792 ================
 
@@ -421,23 +424,27 @@ informative:
 ~~~~
 {::include-fold ./examples/example-social.xml}
 ~~~~
-   JSON:
 
-   =============== NOTE: '\' line wrapping per RFC 8792 ================
+   JSON:
+   
 ~~~~
+   =============== NOTE: '\' line wrapping per RFC 8792 ================
    GET /restconf/ds/ietf-datastores:running/example-social:members/memb\
    er?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=time\
    stamp&direction=backwards&offset=2&limit=2&sublist-limit=1 HTTP/1.1
    Host: example.com
    Accept: application/yang-data+json
 ~~~~
+
    Response from the RESTCONF server:
 
+~~~~
    HTTP/1.1 200 OK
    Date: Thu, 26 Jan 2017 20:56:30 GMT
    Server: example-server
    Last-Modified: Thu, 26 Jan 2017 20:55:30 GMT
    Content-Type: application/yang-data+json
+~~~~
 
 ~~~~
    {
