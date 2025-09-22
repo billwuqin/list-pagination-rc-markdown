@@ -1781,15 +1781,16 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
 </div>
 <div class="alignLeft art-text artwork" id="appendix-C.1-6">
 <pre>
-&lt;lp:xml-list xmlns:lp="urn:ietf:params:xml:ns:yang:ietf-restconf-lis\
-t-pagination"
-  xmlns="http://example.com/ns/example-social"&gt;
-  &lt;member lp:remaining="1"&gt;
+&lt;xml-list&gt;
+  &lt;member
+    xmlns="https://example.com/ns/example-social"
+    xmlns:lp="urn:ietf:params:xml:ns:yang:ietf-list-pagination"
+    lp:remaining="1" lp:locale="en_US"&gt;
     &lt;member-id&gt;eric&lt;/member-id&gt;
     &lt;email-address&gt;eric@example.com&lt;/email-address&gt;
     &lt;password&gt;$0$1543&lt;/password&gt;
     &lt;avatar&gt;BASE64VALUE=&lt;/avatar&gt;
-    &lt;tagline&gt;Go to bed with dreams; wake up with a purpose.&lt;/tagline&gt;
+    &lt;tagline&gt;Go to bed with dreams; wake up with purpose.&lt;/tagline&gt;
     &lt;following&gt;alice&lt;/following&gt;
     &lt;posts&gt;
       &lt;post&gt;
@@ -1799,7 +1800,7 @@ t-pagination"
       &lt;/post&gt;
     &lt;/posts&gt;
     &lt;favorites&gt;
-      &lt;bits lp:remaining="2"&gt;two&lt;/bits&gt;
+      &lt;bits lp:remaining="2" lp:locale="en_US"&gt;two&lt;/bits&gt;
     &lt;/favorites&gt;
     &lt;stats&gt;
       &lt;joined&gt;2020-09-17T19:38:32Z&lt;/joined&gt;
@@ -1807,20 +1808,24 @@ t-pagination"
       &lt;last-activity&gt;2020-09-17T18:02:04Z&lt;/last-activity&gt;
     &lt;/stats&gt;
   &lt;/member&gt;
-  &lt;member lp:remaining="1"&gt;
+  &lt;member
+    xmlns="https://example.com/ns/example-social"
+    xmlns:lp="urn:ietf:params:xml:ns:yang:ietf-list-pagination"
+    lp:remaining="1" lp:locale="en_US"&gt;
     &lt;member-id&gt;bob&lt;/member-id&gt;
     &lt;email-address&gt;bob@example.com&lt;/email-address&gt;
     &lt;password&gt;$0$1543&lt;/password&gt;
     &lt;avatar&gt;BASE64VALUE=&lt;/avatar&gt;
     &lt;tagline&gt;Here and now, like never before.&lt;/tagline&gt;
     &lt;posts&gt;
-      &lt;post lp:remaining="2"&gt;
+      &lt;post lp:remaining="2" lp:locale="en_US"&gt;
         &lt;timestamp&gt;2020-08-14T03:32:25Z&lt;/timestamp&gt;
         &lt;body&gt;Just got in.&lt;/body&gt;
       &lt;/post&gt;
     &lt;/posts&gt;
     &lt;favorites&gt;
-      &lt;decimal64-numbers lp:remaining="1"&gt;3.14159&lt;/bits&gt;
+      &lt;decimal64-numbers lp:remaining="1" lp:locale="en_US"&gt;3.14159&lt;\
+/decimal64-numbers&gt;
     &lt;/favorites&gt;
     &lt;stats&gt;
       &lt;joined&gt;2020-08-14T03:30:00Z&lt;/joined&gt;
@@ -1828,7 +1833,7 @@ t-pagination"
       &lt;last-activity&gt;2020-08-14T03:34:30Z&lt;/last-activity&gt;
     &lt;/stats&gt;
   &lt;/member&gt;
-&lt;/lp:xml-list&gt;
+&lt;/xml-list&gt;
 </pre><a href="#appendix-C.1-6" class="pilcrow">¶</a>
 </div>
 <p id="appendix-C.1-7">JSON:<a href="#appendix-C.1-7" class="pilcrow">¶</a></p>
