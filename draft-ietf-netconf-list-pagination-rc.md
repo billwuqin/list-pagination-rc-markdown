@@ -400,7 +400,7 @@ informative:
 
    XML:
    =============== NOTE: '\' line wrapping per RFC 8792 ================
-   
+
 ~~~~
    GET /restconf/ds/ietf-datastores:operational/example-social:members/\
    member?where=//stats//joined[starts-with(timestamp,'2020')]&sort-by=\
@@ -410,7 +410,7 @@ informative:
 ~~~~
 
    Response from the RESTCONF server:
-   
+  
 ~~~~
    =============== NOTE: '\' line wrapping per RFC 8792 ================
 
@@ -426,7 +426,7 @@ informative:
 ~~~~
 
    JSON:
-   
+
 ~~~~
    =============== NOTE: '\' line wrapping per RFC 8792 ================
    GET /restconf/ds/ietf-datastores:running/example-social:members/memb\
