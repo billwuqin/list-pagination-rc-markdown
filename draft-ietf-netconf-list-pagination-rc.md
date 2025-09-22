@@ -410,7 +410,7 @@ informative:
 ~~~~
 
    Response from the RESTCONF server:
-  
+
 ~~~~
    =============== NOTE: '\' line wrapping per RFC 8792 ================
 
