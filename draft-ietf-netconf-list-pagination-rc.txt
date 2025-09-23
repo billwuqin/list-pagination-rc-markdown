@@ -166,7 +166,10 @@ Table of Contents
    "locale", "where", and "sublist-limit".
 
    These eight query parameters correspond to those defined in Sections
-   3.1 and 3.2 in [I-D.ietf-netconf-list-pagination].
+   3.1 and 3.2 in [I-D.ietf-netconf-list-pagination].  Note that complex
+   pagination with combination of query parameters may cause performance
+   strain on constrained devices due to intensive processing on both the
+   server and the client.
 
    +---------------+---------+-----------------------------------------+
    | Name          | Methods | Description                             |

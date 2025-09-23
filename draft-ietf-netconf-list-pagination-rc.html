@@ -1360,7 +1360,10 @@ appear in all capitals, as shown here.<a href="#section-1.2-1" class="pilcrow">�
    parameters "limit", "offset", "cursor", "direction", "sort-by",
    "locale", "where", and "sublist-limit".<a href="#section-2.3-1" class="pilcrow">¶</a></p>
 <p id="section-2.3-2">These eight query parameters correspond to those defined in Sections
-   3.1 and 3.2 in <span>[<a href="#I-D.ietf-netconf-list-pagination" class="cite xref">I-D.ietf-netconf-list-pagination</a>]</span>.<a href="#section-2.3-2" class="pilcrow">¶</a></p>
+   3.1 and 3.2 in <span>[<a href="#I-D.ietf-netconf-list-pagination" class="cite xref">I-D.ietf-netconf-list-pagination</a>]</span>. Note that complex
+   pagination with combination of query parameters may cause performance
+   strain on constrained devices due to intensive processing on both the
+   server and the client.<a href="#section-2.3-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.3-3">
 <pre>
    +---------------+---------+-----------------------------------------+
