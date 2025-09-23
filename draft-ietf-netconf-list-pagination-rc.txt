@@ -5,14 +5,14 @@
 Network Configuration                                          K. Watsen
 Internet-Draft                                           Watsen Networks
 Intended status: Standards Track                                   Q. Wu
-Expires: 26 March 2026                                            Huawei
+Expires: 27 March 2026                                            Huawei
                                                             P. Andersson
                                                                    Cisco
                                                               O. Hagsand
                                                                    SUNET
                                                                    H. Li
                                                                       HP
-                                                       22 September 2025
+                                                       23 September 2025
 
 
              RESTCONF Extensions to Support List Pagination
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 March 2026.
+   This Internet-Draft will expire on 27 March 2026.
 
 Copyright Notice
 
@@ -256,7 +256,11 @@ Table of Contents
 2.3.3.  The "cursor" Query Parameter
 
    The "cursor" query parameter corresponds to the "cursor" parameter
-   defined in Section 3.1.6 of [I-D.ietf-netconf-list-pagination].
+   defined in Section 3.1.6 of [I-D.ietf-netconf-list-pagination].  As
+   described in Section 3.1.5 of [I-D.ietf-netconf-list-pagination], the
+   server does not keep any stateful information about the "next" and
+   "previous" cursor or the current page.  Due to their ephemeral
+   nature, cursor values are never cached.
 
    If the cursor value is unknown, i.e. the key does not exist, a "404
    Not Found" status-line MUST be returned with the error-type value
