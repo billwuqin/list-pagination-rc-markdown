@@ -210,6 +210,10 @@ informative:
 
    The "cursor" query parameter corresponds to the "cursor" parameter
    defined in Section 3.1.6 of {{?I-D.ietf-netconf-list-pagination}}.
+   As described in Section 3.1.5 of {{?I-D.ietf-netconf-list-pagination}},
+   the server does not keep any stateful information about the "next" and
+   "previous" cursor or the current page.  Due to their ephemeral nature,
+   cursor values are never cached.
 
    If the cursor value is unknown, i.e. the key does not exist, a "404
    Not Found" status-line MUST be returned with the error-type value
