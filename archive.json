@@ -1,0 +1,83 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2025-09-23T01:14:39.926111+00:00",
+  "repo": "billwuqin/list-pagination-rc-markdown",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOPy0fKM6pxHsT",
+      "title": "Address OPS DIR comments from Joe Clark",
+      "url": "https://github.com/billwuqin/list-pagination-rc-markdown/pull/1",
+      "state": "MERGED",
+      "author": "billwuqin",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-09-22T07:23:31Z",
+      "updatedAt": "2025-09-22T07:24:07Z",
+      "baseRepository": "billwuqin/list-pagination-rc-markdown",
+      "baseRefName": "main",
+      "baseRefOid": "13f1d1b4c94aaba9b3f55d732d96912d28bf5980",
+      "headRepository": "billwuqin/list-pagination-rc-markdown",
+      "headRefName": "billwuqin-patch-1",
+      "headRefOid": "a208b512c80b3c331fe4834f333db818b4fba249",
+      "closedAt": "2025-09-22T07:24:07Z",
+      "mergedAt": "2025-09-22T07:24:07Z",
+      "mergedBy": "billwuqin",
+      "mergeCommit": {
+        "oid": "81f8ac57a66c26ac440e6f0a8790333da3d42d03"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
